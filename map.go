@@ -18,6 +18,3 @@ func mapValue(val Value) (out Map) {
 	}
 	return
 }
-
-// // MapReflect returns MapValue(Reflect())
-// func MapReflect(arg I) Map { return MapValue(Reflect(arg)) }

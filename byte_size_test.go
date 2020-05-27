@@ -9,7 +9,7 @@ import (
 func TestByteSizeDict(t *testing.T) {
 	dict := types.Dict{}
 	dict["hello"] = "world"
-	size := len(types.StringDict(dict))
+	size := len(types.NewStringDict(dict))
 	if actualSize := types.ByteSizeJSONDict(dict); actualSize != size {
 		t.Log("Expected", size)
 		t.Log("Actual", actualSize)
@@ -20,7 +20,7 @@ func TestByteSizeDict(t *testing.T) {
 func TestByteSizeSlice(t *testing.T) {
 	slice := types.Slice{}
 	slice = append(slice, "hello", "world")
-	size := len(types.StringSlice(slice))
+	size := len(types.NewStringSlice(slice))
 	if actualSize := types.ByteSizeJSONSlice(slice); actualSize != size {
 		t.Log("Expected", size)
 		t.Log("Actual", actualSize)

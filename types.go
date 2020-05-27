@@ -10,7 +10,7 @@ package types
 // sb.Reset()
 // poolStringBuilder.Put(sb)
 var poolStringBuilder = Pool{
-	New: func() interface{} {
+	New: func() I {
 		return &StringBuilder{}
 	},
 }

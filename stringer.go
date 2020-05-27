@@ -15,5 +15,5 @@ type stringer struct {
 }
 
 func (i stringer) String() string {
-	return String(i.i)
+	return NewString(i.i)
 }

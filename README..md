@@ -1,7 +1,7 @@
 # `taylz.io/types`
 Package `types` provides a small shim layer for go standard library type system
 
-Types aliases for `io`, `sync`, `time`, `unsafe`, and many more
+Types aliases for `fmt`, `io`, `rand`, `strings`, `sync`, `time`, `unsafe`, and more
 
 Improved JSON encoding, with average 66% speed savings, and over 75% memory savings
 
@@ -58,23 +58,24 @@ String a byte slice using the `unsafe` hack for 95% speed savings
 
 |Slice Encoding	|Speed	|Memory	|
 |---	|---	|---	|
-|`fmt.Sprint`	|6446 ns/op	|384 B/op	|
-|`encoding/json.Marshal`	|4843 ns/op	|320 B/op	|
-|`types.String`	|3029 ns/op	|144 B/op	|
+|`fmt.Sprint`	|6463 ns/op	|384 B/op	|
+|`json.Marshal`	|4723 ns/op	|320 B/op	|
+|`types.NewString`	|2982 ns/op	|144 B/op	|
+|`types.NewStringSlice`	|2797 ns/op	|112 B/op	|
 
 |Map Encoding Small	|Speed	|Memory	|
 |---	|---	|---	|
-|`fmt.Sprint`	|33095 ns/op	|1920 B/op	|
-|`encoding/json.Marshal`	|29010 ns/op	|2336 B/op	|
-|`types/String(Dict)`	|07260 ns/op	|0384 B/op	|
-|`types/String(Map)`	|09132 ns/op	|0384 B/op	|
+|`fmt.Sprint`	|32371 ns/op	|1920 B/op	|
+|`json.Marshal`	|28480 ns/op	|2336 B/op	|
+|`types.NewStringDict`	|07159 ns/op	|0384 B/op	|
+|`types.NewStringMap`	|09287 ns/op	|0384 B/op	|
 
 |Map Encoding Large	|Speed	|Memory	|
 |---	|---	|---	|
-|`fmt.Sprint`	|1063150 ns/op	|66238 B/op	|
-|`encoding/json.Marshal`	|0950726 ns/op	|77170 B/op	|
-|`types/String(Dict)`	|0289326 ns/op	|15163 B/op	|
-|`types/String(Map)`	|0291579 ns/op	|15163 B/op	|
+|`fmt.Sprint`	|1052620 ns/op	|66238 B/op	|
+|`json.Marshal`	|0935566 ns/op	|77170 B/op	|
+|`types.NewStringDict`	|0292551 ns/op	|15164 B/op	|
+|`types.NewStringMap`	|0292671 ns/op	|15163 B/op	|
 
 _1. for `fmt.Sprint`, default golang encoding format is accepted, all others use JSON encoding format_
 

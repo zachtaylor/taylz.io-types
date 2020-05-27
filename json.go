@@ -24,21 +24,21 @@ func EncodeJSON(sb *StringBuilder, arg I) {
 	case nil:
 		sb.WriteString("null")
 	case bool:
-		sb.WriteString(StringBool(v))
+		sb.WriteString(NewStringBool(v))
 	case Bytes:
 		sb.WriteByte(charquote)
-		sb.WriteString(jsonEscapeString.Replace(StringBytes(v)))
+		sb.WriteString(jsonEscapeString.Replace(NewStringBytes(v)))
 		sb.WriteByte(charquote)
 	case Dict:
 		EncodeJSONDict(sb, v)
 	case error:
 		sb.WriteString(`"error: ` + jsonEscapeString.Replace(v.Error()) + `"`)
 	case float64:
-		sb.WriteString(StringF64(v))
+		sb.WriteString(NewStringF64(v))
 	case int:
-		sb.WriteString(StringInt(v))
+		sb.WriteString(NewStringInt(v))
 	case int64:
-		sb.WriteString(StringI64(v))
+		sb.WriteString(NewStringI64(v))
 	case Map:
 		EncodeJSONMap(sb, v)
 	case Slice:
@@ -126,4 +126,4 @@ func EncodeJSONSlice(sb *StringBuilder, slice Slice) {
 var jsonEscapeString = strings.NewReplacer(`\`, `\\`, `"`, `\"`)
 
 // DecodeJSON returns json.NewDecoder().Decode()
-func DecodeJSON(r Reader, v interface{}) error { return json.NewDecoder(r).Decode(v) }
+func DecodeJSON(r Reader, v I) error { return json.NewDecoder(r).Decode(v) }

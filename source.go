@@ -42,7 +42,7 @@ func (src *Source) String() string {
 			}
 		}
 		if lno := src.Line(); lno > 0 {
-			msg += "#" + StringInt(lno)
+			msg += "#" + NewStringInt(lno)
 		}
 	}
 	return msg

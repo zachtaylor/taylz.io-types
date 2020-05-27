@@ -36,12 +36,12 @@ func NewTimer(d Duration) *Timer {
 	return time.NewTimer(d)
 }
 
-// TimeNow returns time.Now()
-func TimeNow() Time {
+// NewTime returns time.Now()
+func NewTime() Time {
 	return time.Now()
 }
 
-// TimeUnix return time.Unix()
-func TimeUnix(sec int64, nsec int64) Time {
+// NewTimeUnix return time.Unix()
+func NewTimeUnix(sec int64, nsec int64) Time {
 	return time.Unix(sec, nsec)
 }
