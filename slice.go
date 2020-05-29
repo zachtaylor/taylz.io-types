@@ -16,7 +16,7 @@ type SliceInt = sort.IntSlice
 
 // SliceReflect returns a Slice from an arg
 func SliceReflect(arg I) (out Slice) {
-	if val := Reflect(arg); val.Kind() == SliceKind {
+	if val := Reflect(arg); val.Kind() == KindSlice {
 		out = sliceValue(val)
 	}
 	return

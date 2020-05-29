@@ -8,11 +8,11 @@ type Kind = reflect.Kind
 // Value = reflect.Value
 type Value = reflect.Value
 
-// SliceKind = reflect.Slice
-const SliceKind = reflect.Slice
+// KindSlice = reflect.Slice
+const KindSlice = reflect.Slice
 
-// MapKind = reflect.Map
-const MapKind = reflect.Map
+// KindMap = reflect.Map
+const KindMap = reflect.Map
 
 // T = reflect.Type
 type T = reflect.Type

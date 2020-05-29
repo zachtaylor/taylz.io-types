@@ -52,9 +52,9 @@ func EncodeJSON(sb *StringBuilder, arg I) {
 	default:
 		val := Reflect(arg)
 		k := val.Kind()
-		if k == SliceKind {
+		if k == KindSlice {
 			EncodeJSONSlice(sb, sliceValue(val))
-		} else if k == MapKind {
+		} else if k == KindMap {
 			EncodeJSONMap(sb, mapValue(val))
 		} else {
 			fmt.Fprint(sb, arg)

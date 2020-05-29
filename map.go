@@ -5,7 +5,7 @@ type Map = map[I]I
 
 // MapReflect returns a Map from an arg
 func MapReflect(arg I) (out Map) {
-	if val := Reflect(arg); val.Kind() == MapKind {
+	if val := Reflect(arg); val.Kind() == KindMap {
 		out = mapValue(val)
 	}
 	return
