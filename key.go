@@ -1,10 +1,5 @@
 package types
 
-// KeyStorer is an interface that tests keys
-type KeyStorer interface {
-	Has(string) bool
-}
-
 // KeyGen returns a new unique Key for the KeyStorer
 //
 // KeyStorer synchronization not within scope; call this func within applicable lock state
@@ -19,6 +14,12 @@ func KeyGen(store KeyStorer, size int, charset string, rand *Rand) string {
 		done = !store.Has(key)
 	}
 	return key
+}
+
+// KeyGener is an interface for generating string keys
+type KeyGener interface {
+	// KeyGen produces a unique key, given that the underlying KeyStorer is locked
+	KeyGen(KeyStorer) string
 }
 
 // KeyGenAlpha uses KeyGen with CharsetAlpha
@@ -72,4 +73,9 @@ func NewKeyGenSettings(size int, charset string, rand *Rand) *KeyGenSettings {
 // As with KeyGen, lock the store to guarantee maintainted uniqueness
 func (keygen *KeyGenSettings) KeyGen(store KeyStorer) string {
 	return KeyGen(store, keygen.Size, keygen.Charset, keygen.Rand)
+}
+
+// KeyStorer is an interface that tests keys
+type KeyStorer interface {
+	Has(string) bool
 }
