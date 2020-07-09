@@ -15,10 +15,10 @@ func BenchmarkBuiltinStringBytes(b *testing.B) {
 	}
 }
 
-func BenchmarkTypesNewStringBytes(b *testing.B) {
+func BenchmarkTypesStringBytes(b *testing.B) {
 	x := []byte{'h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd'}
 	for i := 0; i < b.N; i++ {
-		_ = types.NewStringBytes(x)
+		_ = types.StringBytes(x)
 	}
 }
 
@@ -36,17 +36,17 @@ func BenchmarkJsonMarshalSlice(b *testing.B) {
 	}
 }
 
-func BenchmarkTypesNewStringSlice1(b *testing.B) {
+func BenchmarkTypesStringSliceGeneric(b *testing.B) {
 	data := MakeDataSlice()
 	for i := 0; i < b.N; i++ {
-		types.NewString(data)
+		types.StringI(data)
 	}
 }
 
-func BenchmarkTypesNewStringSlice2(b *testing.B) {
+func BenchmarkTypesStringSliceOptimal(b *testing.B) {
 	data := MakeDataSlice()
 	for i := 0; i < b.N; i++ {
-		types.NewStringSlice(data)
+		types.StringSlice(data)
 	}
 }
 
@@ -64,17 +64,17 @@ func BenchmarkJsonMarshal1(b *testing.B) {
 	}
 }
 
-func BenchmarkTypesNewStringDict1(b *testing.B) {
+func BenchmarkTypesStringDict1(b *testing.B) {
 	data := MakeDataDict1()
 	for i := 0; i < b.N; i++ {
-		types.NewStringDict(data)
+		types.StringDict(data)
 	}
 }
 
-func BenchmarkTypesNewStringMap1(b *testing.B) {
+func BenchmarkTypesStringMap1(b *testing.B) {
 	data := types.MapReflect(MakeDataDict1())
 	for i := 0; i < b.N; i++ {
-		types.NewStringMap(data)
+		types.StringMap(data)
 	}
 }
 
@@ -92,17 +92,17 @@ func BenchmarkJsonMarshal2(b *testing.B) {
 	}
 }
 
-func BenchmarkTypesNewStringDict2(b *testing.B) {
+func BenchmarkTypesStringDict2(b *testing.B) {
 	data := MakeDataDict2()
 	for i := 0; i < b.N; i++ {
-		types.NewStringDict(data)
+		types.StringDict(data)
 	}
 }
 
-func BenchmarkTypesNewStringMap2(b *testing.B) {
+func BenchmarkTypesStringMap2(b *testing.B) {
 	data := types.MapReflect(MakeDataDict2())
 	for i := 0; i < b.N; i++ {
-		types.NewStringMap(data)
+		types.StringMap(data)
 	}
 }
 
@@ -120,16 +120,16 @@ func BenchmarkJsonMarshal3(b *testing.B) {
 	}
 }
 
-func BenchmarkTypesNewStringDict3(b *testing.B) {
+func BenchmarkTypesStringDict3(b *testing.B) {
 	data := MakeDataDict3()
 	for i := 0; i < b.N; i++ {
-		types.NewStringDict(data)
+		types.StringDict(data)
 	}
 }
 
-func BenchmarkTypesNewStringMap3(b *testing.B) {
+func BenchmarkTypesStringMap3(b *testing.B) {
 	data := types.MapReflect(MakeDataDict3())
 	for i := 0; i < b.N; i++ {
-		types.NewStringMap(data)
+		types.StringMap(data)
 	}
 }

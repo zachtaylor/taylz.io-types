@@ -13,7 +13,7 @@ func NewSet() *Set {
 	}
 }
 
-// Has implements KeyStorer
+// Has returns whether the set has the key present
 func (set *Set) Has(i I) bool {
 	return set.cache[i]
 }

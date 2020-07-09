@@ -8,7 +8,7 @@ func Bool(arg I) bool {
 	case bool:
 		return v
 	case Bytes:
-		return BoolString(NewStringBytes(v))
+		return BoolString(StringBytes(v))
 	case Dict:
 		return true
 	case error:
