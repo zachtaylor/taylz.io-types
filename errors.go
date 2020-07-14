@@ -1,5 +1,12 @@
 package types
 
+// Err creates an error
+func Err(str string) error {
+	return Error{
+		Text: str,
+	}
+}
+
 // Error is a basic error
 type Error struct {
 	Text   string
