@@ -13,14 +13,14 @@ func NewBuffer(b Bytes) *Buffer {
 	return bytes.NewBuffer(b)
 }
 
-// NewBufferString returns bytes.NewBufferString
-func NewBufferString(s string) *Buffer {
+// BufferString returns bytes.NewBufferString
+func BufferString(s string) *Buffer {
 	return bytes.NewBufferString(s)
 }
 
-// NewBytesString casts string to Bytes
+// BytesString casts string to Bytes
 //
 // outperforms `[]byte(s)` by ~95%
-func NewBytesString(s string) Bytes {
+func BytesString(s string) Bytes {
 	return *(*Bytes)(Pointer(&s))
 }
