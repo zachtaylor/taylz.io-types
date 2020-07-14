@@ -1,9 +1,6 @@
 package types
 
-import (
-	"sort"
-	"strings"
-)
+import "sort"
 
 // Slice is a slice of any
 type Slice = []I
@@ -22,11 +19,6 @@ func SliceReflect(arg I) (out Slice) {
 	return
 }
 
-// SliceSort uses sort.Slice
-func SliceSort(slice Slice, less func(i int, j int) bool) {
-	sort.Slice(slice, less)
-}
-
 func sliceValue(val Value) (out Slice) {
 	len := val.Len()
 	out = make(Slice, len)
@@ -38,6 +30,3 @@ func sliceValue(val Value) (out Slice) {
 
 // SliceString = sort.StringSlice
 type SliceString = sort.StringSlice
-
-// NewSliceStringSplit is an alias for strings.Split
-func NewSliceStringSplit(s, sep string) SliceString { return strings.Split(s, sep) }
