@@ -23,8 +23,12 @@ func String(i I) string {
 		return StringF64(v)
 	case int:
 		return StringInt(v)
+	case uint:
+		return StringUint(v)
 	case int64:
 		return StringI64(v)
+	case uint64:
+		return StringUI64(v)
 	case Map:
 		return StringMap(v)
 	case Slice:
@@ -33,8 +37,6 @@ func String(i I) string {
 		return v
 	case Stringer:
 		return v.String()
-	case uint:
-		return StringUint(v)
 	default:
 		return fmt.Sprint(i)
 	}
@@ -68,10 +70,16 @@ func StringDict(dict Dict) (str string) {
 func StringF64(f float64) string { return strconv.FormatFloat(f, 'f', -1, 64) }
 
 // StringInt casts int to string
-func StringInt(i int) string { return strconv.Itoa(i) }
+func StringInt(i int) string { return strconv.FormatInt(int64(i), 10) }
+
+// StringUint casts uint to string
+func StringUint(i uint) string { return strconv.FormatUint(uint64(i), 10) }
 
 // StringI64 casts int64 to string
 func StringI64(i64 int64) string { return strconv.FormatInt(i64, 10) }
+
+// StringUI64 casts uint64 to string
+func StringUI64(i64 uint64) string { return strconv.FormatUint(i64, 10) }
 
 // StringJoin is an alias for strings.Join
 func StringJoin(a []string, sep string) string { return strings.Join(a, sep) }
@@ -100,9 +108,6 @@ func StringSlice(slice Slice) (str string) {
 
 // StringTrim uses strings.Trim
 func StringTrim(a, b string) string { return strings.Trim(a, b) }
-
-// StringUint casts uint to string
-func StringUint(ui uint) string { return StringInt(int(ui)) }
 
 // StringContains uses strings.Contains
 func StringContains(a, b string) bool { return strings.Contains(a, b) }

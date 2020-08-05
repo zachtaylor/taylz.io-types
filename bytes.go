@@ -18,3 +18,12 @@ func NewBufferString(s string) *Buffer { return bytes.NewBufferString(s) }
 //
 // outperforms `[]byte(s)` by ~95%
 func BytesString(s string) Bytes { return *(*Bytes)(Pointer(&s)) }
+
+// BytesDict casts Dict to Bytes
+func BytesDict(dict Dict) Bytes { return BytesString(StringDict(dict)) }
+
+// BytesMap casts Map to Bytes
+func BytesMap(m Map) Bytes { return BytesString(StringMap(m)) }
+
+// BytesSlice casts Slice to Bytes
+func BytesSlice(slice Slice) Bytes { return BytesString(StringSlice(slice)) }
