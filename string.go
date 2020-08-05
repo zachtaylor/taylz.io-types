@@ -6,8 +6,8 @@ import (
 	"strings"
 )
 
-// StringI casts any value to string
-func StringI(i I) string {
+// String casts any value to string
+func String(i I) string {
 	switch v := i.(type) {
 	case nil:
 		return ""

@@ -39,7 +39,7 @@ func BenchmarkJsonMarshalSlice(b *testing.B) {
 func BenchmarkTypesStringSliceGeneric(b *testing.B) {
 	data := MakeDataSlice()
 	for i := 0; i < b.N; i++ {
-		types.StringI(data)
+		types.String(data)
 	}
 }
 

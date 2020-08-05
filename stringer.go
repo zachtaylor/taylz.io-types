@@ -10,7 +10,7 @@ func NewStringer(i I) Stringer { return stringer{i} }
 
 type stringer struct{ I } // generic container
 
-func (stringer stringer) String() string { return StringI(stringer.I) }
+func (stringer stringer) String() string { return String(stringer.I) }
 
 // StringerDict is a Stringer wrapper for Dict
 type StringerDict Dict
