@@ -7,20 +7,26 @@ func Err(str string) error {
 	}
 }
 
+// ErrWith creates an error with a source
+func ErrWith(str string, source error) error {
+	return Error{
+		Text:   str,
+		Source: source,
+	}
+}
+
 // Error is a basic error
 type Error struct {
 	Text   string
 	Source error
 }
 
-func (e Error) isError() error {
-	return e
-}
-
 func (e Error) Error() string {
-	return e.Text + ": " + e.Source.Error()
+	s := e.Text
+	if e.Source != nil {
+		s += ": " + e.Source.Error()
+	}
+	return s
 }
 
-func (e Error) String() string {
-	return "Error{" + e.Text + " " + e.Source.Error() + "}"
-}
+func (e Error) String() string { return "Error{" + e.Error() + "}" }
