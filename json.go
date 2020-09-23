@@ -71,7 +71,7 @@ func EncodeJSONDict(sb *StringBuilder, dict Dict) {
 	const charclose = '}'
 	sb.WriteByte(charopen)
 	first := true
-	for k, v := range dict { // k type not required, but golang requires this distinction
+	for k, v := range dict {
 		if !first {
 			sb.WriteByte(charsep)
 		} else {

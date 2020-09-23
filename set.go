@@ -14,9 +14,7 @@ func NewSet() *Set {
 }
 
 // Has returns whether the set has the key present
-func (set *Set) Has(i I) bool {
-	return set.cache[i]
-}
+func (set *Set) Has(i I) bool { return set.cache[i] }
 
 // Add saves an element to this Set
 func (set *Set) Add(i I) {
@@ -30,7 +28,6 @@ func (set *Set) Remove(i I) {
 	set.lock.Lock()
 	delete(set.cache, i)
 	set.lock.Unlock()
-
 }
 
 // SetString is a threadsafe map string->bool
@@ -53,13 +50,11 @@ func (set *SetString) Add(string string) {
 	set.lock.Unlock()
 }
 
-// Has implements KeyStorer
-func (set *SetString) Has(string string) bool {
-	return set.cache[string]
-}
+// Has returns whether the set has the string present
+func (set *SetString) Has(string string) bool { return set.cache[string] }
 
-// SliceString returns a new SliceString all elements randomly ordered
-func (set *SetString) SliceString() SliceString {
+// Slice returns a new SliceString with all elements randomly ordered
+func (set *SetString) Slice() SliceString {
 	set.lock.Lock()
 	keys := make(SliceString, len(set.cache))
 	i := 0
