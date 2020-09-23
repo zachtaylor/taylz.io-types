@@ -30,3 +30,13 @@ func sliceValue(val Value) (out Slice) {
 
 // SliceString = sort.StringSlice
 type SliceString = sort.StringSlice
+
+// SliceUI is []uint with sort-like additions
+type SliceUI []uint
+
+func (p SliceUI) Len() int           { return len(p) }
+func (p SliceUI) Less(i, j int) bool { return p[i] < p[j] }
+func (p SliceUI) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
+
+// Sort calls sort.Sort with this
+func (p SliceUI) Sort() { sort.Sort(p) }
