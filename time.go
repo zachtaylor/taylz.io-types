@@ -3,16 +3,16 @@ package types
 import "time"
 
 // Hour = time.Hour
-var Hour = time.Hour
+const Hour = time.Hour
 
 // Millisecond = time.Millisecond
-var Millisecond = time.Millisecond
+const Millisecond = time.Millisecond
 
 // Minute = time.Minute
-var Minute = time.Minute
+const Minute = time.Minute
 
 // Second = time.Second
-var Second = time.Second
+const Second = time.Second
 
 // Duration = time.Duration
 type Duration = time.Duration
