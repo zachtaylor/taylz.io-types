@@ -8,22 +8,22 @@ This file contains benchmark comparisons to the standard library with various pa
 goos: linux
 goarch: amd64
 pkg: taylz.io/types
-BenchmarkBuiltinStringBytes-4        	46986300	        25.3 ns/op	       0 B/op	       0 allocs/op
-BenchmarkTypesStringBytes-4          	305424681	         3.87 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFmtSprintSlice-4            	  173694	      6679 ns/op	     384 B/op	      11 allocs/op
-BenchmarkJsonMarshalSlice-4          	  213543	      5568 ns/op	     336 B/op	       8 allocs/op
-BenchmarkTypesStringSliceGeneric-4   	  372691	      3083 ns/op	     144 B/op	       5 allocs/op
-BenchmarkTypesStringSliceOptimal-4   	  418513	      2826 ns/op	     112 B/op	       4 allocs/op
-BenchmarkFmtSprint1-4                	   35274	     34690 ns/op	    1920 B/op	      41 allocs/op
-BenchmarkJsonMarshal1-4              	   40518	     29609 ns/op	    2336 B/op	      43 allocs/op
-BenchmarkTypesStringDict1-4          	  158910	      7283 ns/op	     384 B/op	       1 allocs/op
-BenchmarkTypesStringMap1-4           	  119289	      9507 ns/op	     384 B/op	       1 allocs/op
-BenchmarkFmtSprint2-4                	    1603	    735648 ns/op	   44641 B/op	     992 allocs/op
-BenchmarkJsonMarshal2-4              	    1849	    646364 ns/op	   50251 B/op	    1005 allocs/op
-BenchmarkTypesStringDict2-4          	    6219	    194017 ns/op	    9651 B/op	     170 allocs/op
-BenchmarkTypesStringMap2-4           	    6117	    194768 ns/op	    9651 B/op	     170 allocs/op
-BenchmarkFmtSprint3-4                	    1078	   1106351 ns/op	   66212 B/op	    1508 allocs/op
-BenchmarkJsonMarshal3-4              	    1122	    986201 ns/op	   77189 B/op	    1538 allocs/op
-BenchmarkTypesStringDict3-4          	    3943	    294110 ns/op	   15164 B/op	     253 allocs/op
-BenchmarkTypesStringMap3-4           	    3926	    292863 ns/op	   15164 B/op	     253 allocs/op
+BenchmarkBuiltinStringBytes-4        	43050932	        25.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTypesStringBytes-4          	304471928	         3.86 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFmtSprintSlice-4            	  358131	      3173 ns/op	      80 B/op	       4 allocs/op
+BenchmarkJsonMarshalSlice-4          	  569418	      2158 ns/op	      64 B/op	       2 allocs/op
+BenchmarkTypesStringSliceGeneric-4   	  620298	      1908 ns/op	     112 B/op	       5 allocs/op
+BenchmarkTypesStringSliceOptimal-4   	  707545	      1673 ns/op	      80 B/op	       4 allocs/op
+BenchmarkFmtSprint1-4                	   37072	     30927 ns/op	    1920 B/op	      41 allocs/op
+BenchmarkJsonMarshal1-4              	   44587	     27779 ns/op	    2336 B/op	      43 allocs/op
+BenchmarkTypesStringDict1-4          	  158878	      7201 ns/op	     384 B/op	       1 allocs/op
+BenchmarkTypesStringMap1-4           	  132950	      8718 ns/op	     384 B/op	       1 allocs/op
+BenchmarkFmtSprint2-4                	    1658	    670532 ns/op	   44627 B/op	     992 allocs/op
+BenchmarkJsonMarshal2-4              	    1888	    601376 ns/op	   50251 B/op	    1005 allocs/op
+BenchmarkTypesStringDict2-4          	    6336	    183910 ns/op	    9651 B/op	     170 allocs/op
+BenchmarkTypesStringMap2-4           	    6184	    187285 ns/op	    9651 B/op	     170 allocs/op
+BenchmarkFmtSprint3-4                	    1125	   1022986 ns/op	   66236 B/op	    1508 allocs/op
+BenchmarkJsonMarshal3-4              	    1238	    907943 ns/op	   77181 B/op	    1538 allocs/op
+BenchmarkTypesStringDict3-4          	    4309	    275846 ns/op	   15163 B/op	     253 allocs/op
+BenchmarkTypesStringMap3-4           	    4171	    281199 ns/op	   15163 B/op	     253 allocs/op
 ```

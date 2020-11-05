@@ -7,9 +7,6 @@ func MakeDataSlice() types.Slice {
 		"hello world",
 		"1",
 		[]int{20, 19},
-		types.Dict{
-			"stringer": types.NewStringer("foobar stringer"),
-		},
 	}
 }
 

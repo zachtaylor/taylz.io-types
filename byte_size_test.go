@@ -15,6 +15,14 @@ func TestByteSizeDict(t *testing.T) {
 		t.Log("Actual", actualSize)
 		t.Fail()
 	}
+
+	dict = MakeDataDict1()
+	size = len(types.StringDict(dict))
+	if actualSize := types.ByteSizeJSONDict(dict); actualSize != size {
+		t.Log("Expected", size)
+		t.Log("Actual", actualSize)
+		t.Fail()
+	}
 }
 
 func TestByteSizeSlice(t *testing.T) {
